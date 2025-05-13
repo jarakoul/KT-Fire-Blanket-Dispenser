@@ -1,0 +1,166 @@
+===KrakenTech Industries===
+Fire Blanket Dispenser
+Administrators' Documentation
+
+Product and documentation created by Jara Koul: [~Calling Card: Jaragleef Resident]
+
+Thank you for your interest in the KrakenTech Fire Blanket Dispenser. This is documentation for owners and administrators of the system. If you need to, this can be shared with people who help you manage your area. I suggest not sharing it with general population, as the commands include features that can disrupt roleplay. No rule against it though, share instructions with who you think should should get it.
+
+These blankets are designed to only work with HD Fires. They do not work on TPF/TPF2 fires, nor on merely cosmetic fires. Treat all fires with respect and care.
+
+
+Installation:
+
+Place them close to where people would need to get them. The design is intended to go on a wall, but put it on a post, dangle it from the ceiling, whatever. Rotate so the "Instructions" face is facing where people will see them and fail to read them. Each box takes 1LI.
+
+The blanket, when held, is a temporary attachment with complexity of 1,162. When dropped it takes up 1LI. A dropped blanket is a physical object so it uses some extra system resources that way as well.
+
+
+Basic Operation:
+
+Get within 5m of the box, click it. When it asks if it can attach '=KT= Fire Blanket' to you, click the Yes button.
+
+[~Fire Blanket - Dispenser]
+
+You should then be holding a fire blanket. The straps underneath the dispenser should disappear temporarily for it to "ready" another blanket. They will reappear when it's ready. This process takes about 10 seconds (to make people less likely to grab 40 blankets at once).
+
+[~Fire Blanket - Carrying]
+
+Approach the fire. If you're in a place where you take damage from fire don't get too close, you don't have to. Click on the carried blanket to drop it to the ground where you are standing. The blanket becomes active at that moment, it doesn't affect fires before it is dropped.
+
+[~Fire Blanket - Dropped]
+
+You can then move dropped blankets up against the fire while maintaining a safe distance.
+
+[~Fire Blanket - Dropped - Cursor Highlighted]
+
+The blankets are physical, the easiest way is to click and drag them to where you want them. When the blanket is active, the cursor will change shape as above and you can drag it where you need, hopefully towards the offending fire.
+
+[~Fire Blanket - Drag 1 - 2:1]
+
+[~Fire Blanket - Drag 2 - 2:1]
+
+[~Fire Blanket - Drag 3 - 2:1]
+
+Sometimes, blankets get away from you, and can't easily be dragged any more (e.g. if they're inside a large stubborn fire). You can also edit them and use the build tools controls to move them as needed. While in edit/build tools mode the blanket will not affect fires. Close the build tools window or select a different object to drop the blanket in place where you moved it and let it interact with the fire again.
+
+Cleanup: The person who dropped it can clean up their blanket by deleting it.  If they don't, these blankets clean themselves up automatically. Starting 30 minutes after it's dropped, the blanket will start checking every 10 minutes for nearby smoke/fire (within 10m). If it doesn't detect smoke anymore, it will remove itself.  At 1 hour after it's dropped, it will remove itself regardless of whether or not there's smoke around. Second Life timers are not precise, it might take a few seconds longer to remove itself, particularly on a laggy server.
+
+
+
+Advanced Operation - Held Blanket
+
+While your holding the blanket, it will listen to commands. The commands are different when you are holding the blanket compared to when the blanket has been dropped. Held blankets will listen on channel 911 (emergency phone number in US and several other countries), and only listen to the person holding it. The blanket currently understands two commands while held:
+
+Ping: Tells the blanket to respond with an "Ack" response. This is useful to check that the blanket is active and listening.
+    Example Usage:
+        /911 ping                                   -> Ack
+    
+Transform: Tells the blanket to change what type of firefighting materials to use, and how strong it is against fires when using that material. The blanket does not actively work against fires until dropped, but this tells it what form to take when you drop it.
+
+The three materials types are Water, Foam and Powder, and the strength can be anything from 1 through 999. When changing materials the blanket also changes how it looks. The Water blanket is based on fiberglass fire blankets, the Foam based on wool fire blankets, and the Powder is based on Aramid Fiber fire blankets, used to fight difficult fires from things like electric vehicle batteries. If you just give a material name and no strength, it will keep the strength it had before. The default is a Water blanket at strength 20.
+    Example Usage:
+        /911 transform foam 30              -> Foam blanket at strength 30
+        /911 transform powder               -> Powder blanket keeping the same strength as before
+        /911 transform water 5                -> Water blanket at strength 5
+
+
+Advanced Operation - Dropped Blanket
+
+After you dropped your blanket, it will also listen to commands. The commands are different when you are holding the blanket compared to when the blanket has been dropped. Dropped blankets will listen on channel 999 (emergency phone number in UK and several other countries), and listen to anyone. You can shout the command (ctrl-Enter) to reach all blankets within shout distance. A RegionSay should affect all blankets in the region. The blanket currently understands three commands while dropped:
+
+Ping: Tells the blanket to respond with an "Ack" response. This is useful to check which blankets are active and listening.
+    Example Usage:
+        /999 ping                                   -> Ack
+    
+Smoke: Tells the blanket to report whether or not it detects nearby smoke. This is useful to test the smoke detection functionality.
+    Example Usage:
+        /999 smoke                               -> No smoke found
+                                                        -> Smoke found: #
+
+Clean: Tells the blanket to remove itself. This can be handy if someone has cluttered up the place, or if an out-of-control fire is threatening to fill the sim. Remember, you can shout this command to reach more or farther away blankets.
+    Example Usage:
+        /999 clean                                  -> blanket goes away
+
+
+User's Documentation:
+
+The User's documentation is simply printed on the dispenser box itself for anyone to see:
+    1.  Pull out blanket firmly by straps
+    2.  Approach fire with blanket
+    3.  Touch blanket to drop near fire
+    4.  Move as needed to extinguish fire
+[~=KT= Fire Blanket Instructions]
+
+Obviously, feel free to translate these user instructions as needed. If you want the dispenser box instructions displayed in another language, get me (calling card up top) the translation and I'll get an updated box to you as quickly as I can.
+
+Users cannot use their mouse to drag each other's blankets around.  They are physical, so they can be kicked and moved that way, but one risks getting dangerously close to a fire doing that.  Users can delete their blankets after they're done, but they don't have to thanks to the auto-cleaning system.  Users can take their dropped blankets into their inventory, but they're likely not to last long when the user tries taking it out of inventory again.
+
+
+The Future:
+
+Some features I would like to add:
+    * Handing over blankets without the extra click to grant permission, either via RLV or Experience
+    * A status command (both held and dropped): to give more complete info on the blanket
+    * A nudge command (dropped) to move the blanket closer to the closest smoke/fire without dragging
+
+
+Troubleshooting:
+
+    Dispenser box will not hand over a blanket:
+        * Can the owner of the box still rez in this parcel?
+        * Are scripts enabled?
+    
+    Click to drop the blanket, and it disappears without dropping anything:
+        * Can the user of the blanket currently rez in this parcel?
+        * If the parcel requires a group tag to rez, does the user have that group tag CURRENTLY active?
+        * Are scripts enabled?
+        
+    The blanket went missing after it was successfully dropped:
+        * Blankets can fall through cracks in a structure, or get bumped hard enough to go flying.
+        * If all you need is a working blanket, grab another, continue below if you really need to find it.
+        * In Firestorm you can use Area Search to locate missing blankets.  Go to the Filter tab and 
+            uncheck "Exclude objects that are->Physical" then do a Find for "Bullet", and you should
+            see all firefighting materials in operation, including active blankets.  Active blankets should
+            say "=KT= Bullet" in their description field, distinguishing them from other firefighting materials.
+        * In other viewers, you can similarly use "Build->Pathfinding->Region Objects", but it gives
+            fewer features and works a little differently.
+        * Shout "/999ping" and look for "Ack" responses.  Right clicking on the object name before
+            the Ack response will give you the "Show on Map" option (which sets up a red/blue beacon
+            on it, & a red circle on the Minimap), and a "Teleport to Object Location" to bring you there.
+
+    The blanket is not affecting the fire:
+        * This is not an HD Fire. The blanket does not affect TPF or decorative fires, just HD Fires.
+        * Has the fire been restricted in which materials (Agents on the HD Fire->Settings menu) affect it?
+            If Water was turned off (e.g. for grease or electrical fires), a default blanket won't work.
+            See Advanced Operation - Held Blanket to transform your blanket before dropping.
+        * Was the blanket taken out of someone's inventory? Basic operation should activate
+            this feature, dragging blankets from inventory is not basic operation.
+        * Has the blanket been modified since dropping?  Modified active blankets are no longer reliable,
+            even if it was a "simple" name change.  Use Build Tools ONLY for moving or rotating blankets
+            if you want them to keep working normally.
+        * Larger fires, especially with extra difficulty, seem less affected by the blankets, they still can
+            help augment the effectiveness of fire hoses though.
+        * Some blankets seem to be mysteriously duds, so grab another.
+        
+    The rezzed blanket did not auto-clean:
+        * Was the blanket taken out of someone's inventory? Basic operation should activate
+            this feature, dragging blankets from inventory is not basic operation.
+        * Does it's name start with "=HD="?  Then it's not an active blanket.
+            Active blankets are named "[Material] Bullet @ [strength]", e.g. "Water Bullet @ 20.00000"
+            Under basic operation, the only object with a name starting with "=HD=..." from this product
+            that should be rezzed for more than an instant are "=HD= Fire Blanket Dispenser" objects
+            Basic operation should rename and activate dropped blankets.
+        * Is it one of our blankets?  KrakenTech blankets should have the KT logo in the corner to 
+            the left of the straps (only on the top), and the description should start with "=KT= Bullet"
+        * Did scripts get turned off after the blanket was dropped?
+        
+    What version am I using?
+        * The version number (and debug status) should be in the Description field of each object.
+    
+    I'm getting messages like "=KT= Fire Blanket: ! Held Fire Blanket cleanup"
+        * Debug is on for this dispenser, or one or more objects in the dispenser.  Get a production
+            version and the debug messages should go away.
+        * If this is a production version, let me know to fix it.
+
+    If troubleshooting does not help fix the problem, please let me know (via IM if I'm not around)
