@@ -1,34 +1,45 @@
-// =KT= KrakenTech Fire Blanket Script v0.2.0
+// =KT= KrakenTech Fire Blanket Script v0.2.1
 // For KrakenTech Fire Blankets, dispensed by KrakenTech Fire Blanket Dispensers
 // A fire blanket for putting out HD fires
 //
-// Inspired by the Sombre Fire Blanket
+// This source code is being distributed under the CC0 1.0 Universal License, see:
+//     https://creativecommons.org/publicdomain/zero/1.0/legalcode  
+//     https://github.com/jarakoul/KT-Fire-Blanket-Dispenser/blob/main/LICENSE//
+// This makes it public domain, and free to copy, modify and distribute
+//
+// Inspired by the Sombre Fire Blanket v1.0
 //      Differences:
-//          Autodeletes after a set period of time (1hr?)
+//          Autodeletes after a set period of time (30 min to 1 hr, see documentation)
 //          Can transform from a water bullet (default) to a foam bullet or powder bullet
 //          Can adjust strength
 //          Can listen for an autodelete command
 //
 // Operation:
-//      Dispenser should attach this to you.
+//      Dispenser should attach blanket to you.
 //      Transform to new mode and strength if desired & allowed
 //      Click to drop
 //      Once dropped, it takes the form of the specified bullet to attack fires
-//      Listens to commands at any point
+//      Listens to commands at any point (see documentation)
 //
-// Make sure the containing object is No Modify, and Physical
+// Source code version control management is being done on GitHub:
+//      https://github.com/jarakoul/KT-Fire-Blanket-Dispenser
+//
+// Make sure the containing object is No Modify, designed to be distributed by a
+//      =KT= Fire Blanket Dispenser
 
 
 // Global constants
 
 integer debugLevel = 0;             // Current debug level, 0 turns off all debug msgs
-string version = "v0.2.0";          // Current version number
+string version = "v0.2.1";          // Current version number
 
 string bulletName = "=KT= Bullet";  // Name of bullet in inventory
 
 integer listenChannel = 911;        // The channel to listen on for commands
 
 integer attachPoint = ATTACH_PELVIS;    // Where do we attach to?
+
+float attachTimeout = 30.0;         // How long to wait to self-destruct if not attached
 
 integer WATER = 0;                  // Water Bullet mode
 integer FOAM = 1;                   // Foam Bullet mode
@@ -247,6 +258,8 @@ default
             attaching = TRUE;                   // Let other events know we're attaching
             hideBlanket();                      // Hide Blanket until ready
             llRequestPermissions( avatar, PERMISSION_ATTACH );  // Request to attach
+
+            llSetTimerEvent( attachTimeout );   // Start the timer to self-destruct
         } else {
             // If we're attached manually
             if ( llGetAttached() ) {            
@@ -285,6 +298,23 @@ default
         
         // Parse the remaining command line, running the command
         parseCommandLine( id, msg );
+    }
+
+
+    // Handle when the self-destruct timer exipires
+    timer()
+    {
+        // See if we're still attaching, or already attached?
+        // If we're still attaching, we self destruct,
+        if ( attaching ) {
+            debug( 2, "Time out, self-destruct" );
+    
+            llDie();        // And it takes itself away
+        } else {
+            // otherwise we toss out a debug message
+            debug( 1, "Timer event on an attached blanket" );
+        }
+
     }
 
 

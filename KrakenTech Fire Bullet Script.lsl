@@ -1,20 +1,28 @@
-// =KT= KrakenTech Fire Bullet Script v0.2.0
+// =KT= KrakenTech Fire Bullet Script v0.2.1
 // For KrakenTech Fire Blankets, dispensed by KrakenTech Fire Blanket Dispensers
 // A fire blanket for putting out HD fires
 //
-// Inspired by the Sombre Fire Blanket
+// This source code is being distributed under the CC0 1.0 Universal License, see:
+//     https://creativecommons.org/publicdomain/zero/1.0/legalcode  
+//     https://github.com/jarakoul/KT-Fire-Blanket-Dispenser/blob/main/LICENSE//
+// This makes it public domain, and free to copy, modify and distribute
+//
+// Inspired by the Sombre Fire Blanket v1.0
 //      Differences:
-//          Autodeletes after a set period of time (1hr?)
+//          Autodeletes after a set period of time (30 min to 1 hr, see documentation)
 //          Can transform from a water bullet (default) to a foam bullet or powder bullet
 //          Can adjust strength
 //          Can listen for an autodelete command
 //
 // Operation:
-//      Dispenser should attach this to you.
+//      Dispenser should attach blanket to you.
 //      Transform to new mode and strength if desired & allowed
 //      Click to drop
 //      Once dropped, it takes the form of the specified bullet to attack fires
-//      Listens to commands at any point
+//      Listens to commands at any point (see documentation)
+//
+// Source code version control management is being done on GitHub:
+//      https://github.com/jarakoul/KT-Fire-Blanket-Dispenser
 //
 // Make sure the containing object is No Modify, and Physical, place it in a
 //  =KT= Fire Blanket
@@ -23,7 +31,7 @@
 // Global constants
 
 integer debugLevel = 0;             // Current debug level, 0 turns off all debug msgs
-string version = "v0.2.0";          // Current version number
+string version = "v0.2.1";          // Current version number
 
 integer listenChannel = 999;        // The channel to listen on for commands
 
