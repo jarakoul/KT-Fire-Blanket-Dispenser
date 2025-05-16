@@ -32,11 +32,8 @@ Official GitHub Repository: <https://github.com/jarakoul/KT-Fire-Blanket-Dispens
 More information on related items:
 
     HD Fire:
-
         <https://hdemergency.com/manuals/FireSystem.html#Fire>
-
         <https://marketplace.secondlife.com/p/HD-Fire-System-2/6134488>
 
     Sombre Fire Blanket:
-
         <https://marketplace.secondlife.com/p/Sombre-Fire-Blanket-Working/19388738>
