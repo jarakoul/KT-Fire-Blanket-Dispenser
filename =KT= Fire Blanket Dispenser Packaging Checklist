@@ -1,0 +1,28 @@
+Packaging checklist, in order:
+
+00  Is everything backed up?
+
+01  Make sure we have the right =KT= Bullet
+02  Rez =KT= Bullet on ground (not attach)
+03  Make sure script is No Modify next owner
+04  Update/Reset scripts on =KT= Bullet
+05  Take updated copy of =KT= Bullet into Inventory if needed
+
+06  Make sure we have the right =KT= Fire Blanket
+07  Rez =KT= Fire Blanket on ground (not attach)
+08  Make sure script is No Modify next owner
+09  Delete old =KT= Bullet from =KT= Fire Blanket contents
+10  Drag updated and reset =KT= Bullet into =KT= Fire Blanket contents
+11  Update/Reset scripts on =KT= Fire Blanket
+12  Take updated copy of =KT= Fire Blanket into Inventory
+
+13  Make sure we have the right =KT= Fire Blanket Dispenser
+14  Rez =KT= Fire Blanket Dispenser on ground (not attach)
+15  Make sure script is No Modify next owner
+16  Delete old =KT= Fire Blanket from =KT= Fire Blanket Dispenser contents
+17  Drag updated and reset =KT= Fire Blanket into =KT= Fire Blanket Dispenser contents
+18  Update/Reset scripts on =KT= Fire Blanket Dispenser
+19  Take updated copy of =KT= Fire Blanket Dispenser into inventory
+
+20  Rez a new copy of =KT= Fire Blanket Dispenser
+21  Do basic tests with it
