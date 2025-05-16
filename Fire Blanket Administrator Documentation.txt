@@ -98,6 +98,17 @@ Obviously, feel free to translate these user instructions as needed. If you want
 Users cannot use their mouse to drag each other's blankets around.  They are physical, so they can be kicked and moved that way, but one risks getting dangerously close to a fire doing that.  Users can delete their blankets after they're done, but they don't have to thanks to the auto-cleaning system.  Users can take their dropped blankets into their inventory, but they're likely not to last long when the user tries taking it out of inventory again.
 
 
+Source Control:
+
+These scripts are now managed on GitHub, the git repository is at:
+    https://github.com/jarakoul/KT-Fire-Blanket-Dispenser
+    
+While the packaged scripts are no-modify, this is to prevent users from messing with them during roleplay.  The intent was to make the source available, and, with mod knowledge, the dispenser owner should be able to replace the contents with modified versions of the scripts.  Follow the checklist found in the "=KT= Fire Blanket Dispenser Packaging Checklist" file of the repository, to reassemble with updated contents.  Follow carefully.
+
+All scripts are licensed under the CC0 1.0 Universal License.  See for more info:
+    https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+
 The Future:
 
 Some features I would like to add:
