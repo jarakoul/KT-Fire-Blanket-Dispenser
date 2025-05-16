@@ -46,6 +46,7 @@ Sometimes, blankets get away from you, and can't easily be dragged any more (e.g
 
 Cleanup: The person who dropped it can clean up their blanket by deleting it.  If they don't, these blankets clean themselves up automatically. Starting 30 minutes after it's dropped, the blanket will start checking every 10 minutes for nearby smoke/fire (within 10m). If it doesn't detect smoke anymore, it will remove itself.  At 1 hour after it's dropped, it will remove itself regardless of whether or not there's smoke around. Second Life timers are not precise, it might take a few seconds longer to remove itself, particularly on a laggy server.
 
+Similarly, between when you click the dispenser and the new blanket attaches itself to your avatar, the blanket is invisibly rezzed at the dispenser.  If it never gets the "Accept Attachment Permission" notification it will quietly self destruct 30 seconds after clicking.
 
 
 Advanced Operation - Held Blanket
@@ -146,7 +147,7 @@ Troubleshooting:
     The rezzed blanket did not auto-clean:
         * Was the blanket taken out of someone's inventory? Basic operation should activate
             this feature, dragging blankets from inventory is not basic operation.
-        * Does it's name start with "=HD="?  Then it's not an active blanket.
+        * Does it's name start with "=HD="?  If so, then it's not an active blanket.
             Active blankets are named "[Material] Bullet @ [strength]", e.g. "Water Bullet @ 20.00000"
             Under basic operation, the only object with a name starting with "=HD=..." from this product
             that should be rezzed for more than an instant are "=HD= Fire Blanket Dispenser" objects
@@ -154,6 +155,14 @@ Troubleshooting:
         * Is it one of our blankets?  KrakenTech blankets should have the KT logo in the corner to 
             the left of the straps (only on the top), and the description should start with "=KT= Bullet"
         * Did scripts get turned off after the blanket was dropped?
+        
+    The dispensed blanket did not go away, it's sitting there, invisible:
+        * Was the blanket taken out of someone's inventory? Basic operation should activate
+            this feature, dragging blankets from inventory is not basic operation.
+        * Is it one of our blankets?  Held KrakenTech blankets should have the KT logo in the corner to 
+            the left of the straps (only on the top), and the description should start with "=KT= Fire Blanket"
+        * Did scripts get turned off between when the blanket was dispensed and when it should
+            have attached?
         
     What version am I using?
         * The version number (and debug status) should be in the Description field of each object.
